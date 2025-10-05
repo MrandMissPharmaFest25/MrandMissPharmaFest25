@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Smile Cam – Mr & Miss Pharmacy 2025</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Global Background -->
+  <div class="global-bg"></div>
+
+  <!-- Screen 1: Landing -->
+  <div id="screen1" class="screen active">
+    <div class="content-card">
+      <h1>Mr and Miss Pharmacy and Talent Show Festival 2025</h1>
+      <p class="instructions">Upload your best smile to join the fun!</p>
+      <button class="btn primary" id="btn-upload-1">Upload 1 Photo</button>
+    </div>
+  </div>
+
+  <!-- Screen 2: Nickname Form -->
+  <div id="nickname-modal" class="modal hidden">
+    <div class="modal-content bounce-in">
+      <div class="emoji-pulse">🥺</div>
+      <h2>Would love to know your Nickname.. Please🥺</h2>
+      <form id="nickname-form">
+        <input type="text" name="nickname" id="nickname-input" placeholder="e.g., SmileySam 💫" required autocomplete="off" maxlength="20">
+        <button type="submit" class="btn primary">Let’s Smile! 😁</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Screen 3: Editor -->
+  <div id="screen3-editor" class="screen hidden">
+    <div class="content-card">
+      <h2>Fit Your Smile 😁</h2>
+      <p>Drag • Zoom with Slider • Rotate<br><small>Fit inside the frame!</small></p>
+      <canvas id="editorCanvas" width="1000" height="1000"></canvas>
+      <div class="editor-controls">
+        <button class="btn small" id="btn-rotate">.Rotate.</button>
+        <input type="range" id="zoomSlider" min="0.3" max="3" step="0.1" value="1">
+      </div>
+      <div class="nav-buttons">
+        <button class="btn outline" onclick="goBackToUpload()">Back</button>
+        <button class="btn primary" id="btn-proceed">Proceed</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 4: Processing -->
+  <div id="screen4-processing" class="screen hidden">
+    <div class="content-card">
+      <div class="spinner"></div>
+      <p>Processing your Smile Cam... please wait!</p>
+    </div>
+  </div>
+
+  <!-- Screen 5: Preview & Download -->
+  <div id="screen5-preview" class="screen hidden">
+    <div class="content-card">
+      <h2>Your Smile Cam is Ready! 🎉</h2>
+      <img id="finalImage" src="" alt="Final Smile Cam">
+      <div class="nav-buttons">
+        <button class="btn primary" id="btn-download">Download to My Phone</button>
+        <button class="btn outline" onclick="startOver()">Start Over</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 6: Thank You -->
+  <div id="screen6-thankyou" class="screen hidden">
+    <div class="confetti" id="confetti"></div>
+    <div class="content-card">
+      <h1>😁</h1>
+      <p class="thank-you-text">
+        See you at the Mr and Miss Pharmacy and Talent Show Festival 2025!<br>
+        🎶🎭 Come with mob friends. 🎟️<br>
+        Remember to secure a ticket!
+      </p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
